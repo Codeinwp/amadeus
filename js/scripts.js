@@ -62,10 +62,11 @@ jQuery(function($) {
 		label: '<i class="fa fa-bars"></i>',
 		prependTo: '.mobile-nav',
 		closedSymbol: '&#43;',
-		openedSymbol: '&#45;'
+		openedSymbol: '&#45;',
+		allowParentLinks: true
 	});
 	$('.info-close').click(function(){
 		$(this).parent().fadeOut();
 		return false;
 	});
-});	
+});
