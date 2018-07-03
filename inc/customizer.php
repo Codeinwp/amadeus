@@ -446,6 +446,7 @@ function amadeus_customize_register( $wp_customize ) {
 		array(
 			'default'           => '#618EBA',
 			'sanitize_callback' => 'sanitize_hex_color',
+			'transport'         => 'postMessage',
 		)
 	);
 	$wp_customize->add_control(
