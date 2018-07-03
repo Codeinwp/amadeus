@@ -699,6 +699,10 @@ textarea {
 .group-blog .byline {
 	display: inline;
 }
+.entry-content .more-link {
+	padding: 10px 0;
+	display: block;
+}
 .entry-meta .posted-on:after,
 .entry-meta .author:after {
 	margin: 0 15px;
