@@ -27,6 +27,13 @@
 
 
 
+	//Primary color
+	wp.customize('primary_color',function( value ) {
+		value.bind( function( newval ) {
+			$('a, a:hover, .main-navigation a:hover, .nav-next a:hover, .nav-previous a:hover, .social-navigation li a:hover').css('color', newval );
+			$('button, .button, input[type="button"], input[type="reset"], input[type="submit"], .entry-thumb-inner').css('background-color', newval );
+		} );
+	});
 	//Social background
 	wp.customize('social_bg',function( value ) {
 		value.bind( function( newval ) {
