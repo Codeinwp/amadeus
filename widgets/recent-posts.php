@@ -147,7 +147,7 @@ class Amadeus_Recent_Posts extends WP_Widget {
 				<?php
 				while ( $r->have_posts() ) :
 					$r->the_post();
-?>
+					?>
 					<li class="list-group-item">
 						<div class="recent-post clearfix">
 							<?php if ( has_post_thumbnail() ) : ?>

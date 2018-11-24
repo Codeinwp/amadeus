@@ -295,6 +295,18 @@ function amadeus_excerpt_length( $length ) {
 }
 add_filter( 'excerpt_length', 'amadeus_excerpt_length', 999 );
 
+/**
+ * Excerpt more link
+ */
+function amadeus_excerpt_more( $more ) {
+    return sprintf(
+        '&hellip;<a href="%1$s" class="more-link">%2$s</a>',
+		esc_url( get_permalink( get_the_ID() ) ),
+		/* translators: post title */
+        sprintf( __( 'Continue reading %s', 'amadeus' ), '<span class="screen-reader-text">' . get_the_title( get_the_ID() ) . '</span>' )
+    );
+}
+add_filter( 'excerpt_more', 'amadeus_excerpt_more' );
 
 /**
  * Footer credits

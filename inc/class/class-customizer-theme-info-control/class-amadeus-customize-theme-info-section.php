@@ -100,7 +100,7 @@ class Amadeus_Customizer_Theme_Info_Section extends WP_Customize_Section {
 	 * @return void
 	 */
 	protected function render_template() {
-	?>
+		?>
 		<div class="themeisle-upsell themeisle-boxed-section">
 			<# if ( data.options.length > 0 ) { #>
 				<ul class="themeisle-upsell-features">
@@ -125,6 +125,6 @@ class Amadeus_Customizer_Theme_Info_Section extends WP_Customize_Section {
 				</ul>
 			<# } #>
 		</div>
-	<?php
+		<?php
 	}
 }

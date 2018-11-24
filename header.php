@@ -63,9 +63,7 @@
 					<?php
 					if ( function_exists( 'the_custom_logo' ) && get_theme_mod( 'custom_logo' ) && ( get_theme_mod( 'logo_style', 'hide-title' ) == 'hide-title' ) ) {
 						the_custom_logo();
-					} // End if().
-
-					elseif ( function_exists( 'the_custom_logo' ) && get_theme_mod( 'custom_logo' ) && ( get_theme_mod( 'logo_style', 'hide-title' ) == 'show-title' ) ) {
+					} elseif ( function_exists( 'the_custom_logo' ) && get_theme_mod( 'custom_logo' ) && ( get_theme_mod( 'logo_style', 'hide-title' ) == 'show-title' ) ) {
 						the_custom_logo();
 
 						?>
@@ -74,8 +72,7 @@
 						<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 
 						<?php
-					} /* Only site title and site description */
-					else {
+					} else {
 						?>
 						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 						<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
