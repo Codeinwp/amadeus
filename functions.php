@@ -5,11 +5,6 @@
  * @package Amadeus
  */
 
-$vendor_file = trailingslashit( get_template_directory() ) . 'vendor/autoload.php';
-if ( is_readable( $vendor_file ) ) {
-	require_once $vendor_file;
-}
-add_filter( 'themeisle_sdk_products', 'amadeus_load_sdk' );
 /**
  * Loads products array.
  *
@@ -406,15 +401,15 @@ function amadeus_neve_notice() {
     }
     $dismiss_button =
         sprintf(
-        /* translators: Install Neve link */
+            /* translators: Install Neve link */
             '<a href="%s" class="notice-dismiss" style="text-decoration:none;"></a>',
             '?amadeus_nag_ignore_neve=0'
         );
     $message = sprintf(
-    /* translators: Install Neve link */
+        /* translators: Install Neve link */
         esc_html__( 'Check out %1$s. Fully AMP optimized and responsive, Neve will load in mere seconds and adapt perfectly on any viewing device. Neve works perfectly with Gutenberg and the most popular page builders. You will love it!', 'amadeus' ),
         sprintf(
-        /* translators: Install Neve link */
+            /* translators: Install Neve link */
             '<a target="_blank" href="%1$s"><strong>%2$s</strong></a>',
             esc_url( admin_url( 'theme-install.php?theme=neve' ) ),
             esc_html__( 'our newest theme', 'amadeus' )
@@ -424,7 +419,7 @@ function amadeus_neve_notice() {
 }
 add_action( 'admin_notices', 'amadeus_neve_notice' );
 /**
- * Update the amadeus_ignore_hestia_notice option to true, to dismiss the notice from the dashboard
+ * Update the amadeus_ignore_neve_notice option to true, to dismiss the notice from the dashboard
  */
 function amadeus_nag_ignore_neve() {
     global $current_user;
