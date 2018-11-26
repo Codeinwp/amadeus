@@ -17,6 +17,7 @@ function amadeus_load_sdk( $products ) {
 
 	return $products;
 }
+add_filter( 'themeisle_sdk_products', 'amadeus_load_sdk' );
 
 if ( ! function_exists( 'amadeus_setup' ) ) :
 	/**
