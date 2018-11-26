@@ -1,4 +1,8 @@
+# IntelliJ project files
 .idea
+*.iml
+out
+gen
 node_modules
 logs
 npm-debug.log
@@ -7,3 +11,4 @@ artifact
 vendor
 bin
 composer.lock
+package-lock.json
