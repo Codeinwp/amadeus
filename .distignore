@@ -18,4 +18,4 @@ dist
 artifact
 composer.json
 composer.lock
-key.enc
+themeisle.enc
