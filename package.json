@@ -25,7 +25,7 @@
     "lasttranslator": "Themeisle Translate Team <friends@themeisle.com>"
   },
   "devDependencies": {
-    "grunt-theme-fleet": "codeinwp/grunt-theme-fleet",
+    "grunt-theme-fleet": "github:codeinwp/grunt-theme-fleet",
     "load-project-config": "~0.2.0"
   },
   "wraithSlug": [
