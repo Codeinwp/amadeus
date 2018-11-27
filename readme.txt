@@ -12,6 +12,10 @@ Amadeus is a responsive blog theme that features a modern and clean design.
 == Description ==
 Amadeus is a responsive blog theme that features a modern and clean design. Features include: a parallax header image, Metaslider integration, ability to use Google Fonts, social icons, full color control, custom widgets and much more.
 
+== Copyright ==
+Amadeus WordPress Theme, Copyright (C) 2016 ThemeIsle.com
+Amadeus is distributed under the terms of the GNU GPL
+
 == Changelog ==
 
 = 2.0.7 =
