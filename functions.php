@@ -76,7 +76,7 @@ if ( ! function_exists( 'amadeus_setup' ) ) :
 		 */
 		add_theme_support(
 			'html5',
-            array(
+			array(
 				'search-form',
 				'comment-form',
 				'comment-list',
@@ -91,7 +91,7 @@ if ( ! function_exists( 'amadeus_setup' ) ) :
 		 */
 		add_theme_support(
 			'post-formats',
-            array(
+			array(
 				'aside',
 				'image',
 				'video',
@@ -103,9 +103,9 @@ if ( ! function_exists( 'amadeus_setup' ) ) :
 		// Set up the WordPress core custom background feature.
 		add_theme_support(
 			'custom-background',
-            apply_filters(
+			apply_filters(
 				'amadeus_custom_background_args',
-                array(
+				array(
 					'default-color' => 'f7f3f0',
 					'default-image' => '',
 				)
@@ -299,12 +299,12 @@ add_filter( 'excerpt_length', 'amadeus_excerpt_length', 999 );
  * Excerpt more link
  */
 function amadeus_excerpt_more( $more ) {
-    return sprintf(
-        '&hellip;<a href="%1$s" class="more-link">%2$s</a>',
+	return sprintf(
+		'&hellip;<a href="%1$s" class="more-link">%2$s</a>',
 		esc_url( get_permalink( get_the_ID() ) ),
 		/* translators: post title */
-        sprintf( __( 'Continue reading %s', 'amadeus' ), '<span class="screen-reader-text">' . get_the_title( get_the_ID() ) . '</span>' )
-    );
+		sprintf( __( 'Continue reading %s', 'amadeus' ), '<span class="screen-reader-text">' . get_the_title( get_the_ID() ) . '</span>' )
+	);
 }
 add_filter( 'excerpt_more', 'amadeus_excerpt_more' );
 
@@ -398,41 +398,45 @@ add_filter( 'post_class', 'amadeus_post_class' );
  * Add a dismissible notice in the dashboard about Neve
  */
 function amadeus_neve_notice() {
-    global $current_user;
-    $user_id        = $current_user->ID;
-    $ignored_notice = get_user_meta( $user_id, 'amadeus_ignore_neve_notice_new' );
-    if ( ! empty( $ignored_notice ) ) {
-        return;
-    }
-    $dismiss_button =
-        sprintf(
-            /* translators: Install Neve link */
-            '<a href="%s" class="notice-dismiss" style="text-decoration:none;"></a>',
-            '?amadeus_nag_ignore_neve=0'
-        );
-    $message = sprintf(
-        /* translators: Install Neve link */
-        esc_html__( 'Check out %1$s. Fully AMP optimized and responsive, Neve will load in mere seconds and adapt perfectly on any viewing device. Neve works perfectly with Gutenberg and the most popular page builders. You will love it!', 'amadeus' ),
-        sprintf(
-            /* translators: Install Neve link */
-            '<a target="_blank" href="%1$s"><strong>%2$s</strong></a>',
-            esc_url( admin_url( 'theme-install.php?theme=neve' ) ),
-            esc_html__( 'our newest theme', 'amadeus' )
-        )
-    );
-    printf( '<div class="notice updated" style="position:relative;">%1$s<p>%2$s</p></div>', $dismiss_button, $message );
+	global $current_user;
+	$user_id        = $current_user->ID;
+	$ignored_notice = get_user_meta( $user_id, 'amadeus_ignore_neve_notice_new' );
+	if ( ! empty( $ignored_notice ) ) {
+		return;
+	}
+	$should_display_notice = amadeus_is_before_date( '2019-09-12' );
+	if ( ! $should_display_notice ) {
+		return;
+	}
+	$dismiss_button =
+		sprintf(
+			/* translators: Install Neve link */
+			'<a href="%s" class="notice-dismiss" style="text-decoration:none;"></a>',
+			'?amadeus_nag_ignore_neve=0'
+		);
+	$message = sprintf(
+		/* translators: Install Neve link */
+		esc_html__( 'Check out %1$s. Fully AMP optimized and responsive, Neve will load in mere seconds and adapt perfectly on any viewing device. Neve works perfectly with Gutenberg and the most popular page builders. You will love it!', 'amadeus' ),
+		sprintf(
+			/* translators: Install Neve link */
+			'<a target="_blank" href="%1$s"><strong>%2$s</strong></a>',
+			esc_url( admin_url( 'theme-install.php?theme=neve' ) ),
+			esc_html__( 'our newest theme', 'amadeus' )
+		)
+	);
+	printf( '<div class="notice updated" style="position:relative;">%1$s<p>%2$s</p></div>', $dismiss_button, $message );
 }
 add_action( 'admin_notices', 'amadeus_neve_notice' );
 /**
  * Update the amadeus_ignore_neve_notice_new option to true, to dismiss the notice from the dashboard
  */
 function amadeus_nag_ignore_neve() {
-    global $current_user;
-    $user_id = $current_user->ID;
-    /* If user clicks to ignore the notice, add that to their user meta */
-    if ( isset( $_GET['amadeus_nag_ignore_neve'] ) && '0' == $_GET['amadeus_nag_ignore_neve'] ) {
-        add_user_meta( $user_id, 'amadeus_ignore_neve_notice_new', 'true', true );
-    }
+	global $current_user;
+	$user_id = $current_user->ID;
+	/* If user clicks to ignore the notice, add that to their user meta */
+	if ( isset( $_GET['amadeus_nag_ignore_neve'] ) && '0' == $_GET['amadeus_nag_ignore_neve'] ) {
+		add_user_meta( $user_id, 'amadeus_ignore_neve_notice_new', 'true', true );
+	}
 }
 add_action( 'admin_init', 'amadeus_nag_ignore_neve' );
 
@@ -443,36 +447,36 @@ add_action( 'admin_init', 'amadeus_nag_ignore_neve' );
  * @return bool
  */
 function amadeus_is_before_date( $date ) {
-    $countdown_time = strtotime( $date );
-    $current_time   = time();
-    return $current_time <= $countdown_time;
+	$countdown_time = strtotime( $date );
+	$current_time   = time();
+	return $current_time <= $countdown_time;
 }
 
 /**
  * Retirement notice
  */
 function amadeus_retirement_notice() {
-    global $current_user;
-    $user_id        = $current_user->ID;
-    $ignored_notice = get_user_meta( $user_id, 'amadeus_ignore_retirement_notice' );
-    if ( ! empty( $ignored_notice ) ) {
-        return;
-    }
-    $should_display_notice = ! amadeus_is_before_date( '2019-09-12' );
-    if ( ! $should_display_notice ) {
-        return;
-    }
-    $dismiss_button =
-        sprintf(
-            /* translators: Install Neve link */
-            '<a href="%s" class="notice-dismiss" style="text-decoration:none;"></a>',
-            '?amadeus_nag_ignore_retirement=0'
-        );
+	global $current_user;
+	$user_id        = $current_user->ID;
+	$ignored_notice = get_user_meta( $user_id, 'amadeus_ignore_retirement_notice' );
+	if ( ! empty( $ignored_notice ) ) {
+		return;
+	}
+	$should_display_notice = ! amadeus_is_before_date( '2019-09-12' );
+	if ( ! $should_display_notice ) {
+		return;
+	}
+	$dismiss_button =
+		sprintf(
+			/* translators: Install Neve link */
+			'<a href="%s" class="notice-dismiss" style="text-decoration:none;"></a>',
+			'?amadeus_nag_ignore_retirement=0'
+		);
 
-    $theme_args = wp_get_theme();
-    $name       = $theme_args->__get( 'Name' );
+	$theme_args = wp_get_theme();
+	$name       = $theme_args->__get( 'Name' );
 
-    $notice_template = '
+	$notice_template = '
 			<div class="nv-notice-wrapper">
 			%1$s
 			<hr/>
@@ -484,43 +488,43 @@ function amadeus_retirement_notice() {
 			</div>
 			<style>%5$s</style>';
 
-    /* translators: 1 - notice title, 2 - notice message */
-    $notice_header = sprintf(
-        '<h2>%1$s</h2><p class="about-description">%2$s</p></hr>',
-        esc_html__( 'Your theme is no longer maintained. A New, Modern WordPress Theme is Here!', 'amadeus' ),
-        sprintf(
-            /* translators: %s - theme name */
-            esc_html__( '%s is no longer maintained. Switch to Neve today and get more powerful features (for free).', 'amadeus' ),
-            $name
-        )
-    );
+	/* translators: 1 - notice title, 2 - notice message */
+	$notice_header = sprintf(
+		'<h2>%1$s</h2><p class="about-description">%2$s</p></hr>',
+		esc_html__( 'Your theme is no longer maintained. A New, Modern WordPress Theme is Here!', 'amadeus' ),
+		sprintf(
+			/* translators: %s - theme name */
+			esc_html__( '%s is no longer maintained. Switch to Neve today and get more powerful features (for free).', 'amadeus' ),
+			$name
+		)
+	);
 
-    $notice_picture = sprintf(
-        '<picture>
+	$notice_picture = sprintf(
+		'<picture>
 					<source srcset="about:blank" media="(max-width: 1024px)">
 					<img src="%1$s">
 				</picture>',
-        esc_url( get_template_directory_uri() . '/images/neve.png' )
-    );
+		esc_url( get_template_directory_uri() . '/images/neve.png' )
+	);
 
-    $notice_right_side_content = sprintf(
-        '<div><h3> %1$s</h3><p>%2$s</p></div>',
-        __( 'Switch to Neve today', 'amadeus' ),
-        // translators: %s - theme name
-        esc_html__( 'With Neve you get a super fast, multi-purpose theme, fully AMP optimized and responsive, that works perfectly with Gutenberg and the most popular page builders like Elementor, Beaver Builder, and many more.', 'amadeus' )
-    );
+	$notice_right_side_content = sprintf(
+		'<div><h3> %1$s</h3><p>%2$s</p></div>',
+		__( 'Switch to Neve today', 'amadeus' ),
+		// translators: %s - theme name
+		esc_html__( 'With Neve you get a super fast, multi-purpose theme, fully AMP optimized and responsive, that works perfectly with Gutenberg and the most popular page builders like Elementor, Beaver Builder, and many more.', 'amadeus' )
+	);
 
-    $notice_left_side_content = sprintf(
-        '<div><h3> %1$s</h3><p>%2$s</p><p class="nv-buttons-wrapper"><a class="button button-hero button-primary" href="%3$s" target="_blank">%4$s</a></p> </div>',
-        // translators: %s - theme name
-        sprintf( esc_html__( '%s is no longer maintained', 'amadeus' ), $name ),
-        // translators: %s - theme name
-        sprintf( __( 'We\'re saying goodbye to amadeus in favor of our more powerful Neve free WordPress theme. This means that there will not be any new features added although we will continue to update the theme for major security issues.', 'amadeus' ) ),
-        esc_url( admin_url( 'theme-install.php?theme=neve' ) ),
-        esc_html__( 'See Neve theme', 'amadeus' )
-    );
+	$notice_left_side_content = sprintf(
+		'<div><h3> %1$s</h3><p>%2$s</p><p class="nv-buttons-wrapper"><a class="button button-hero button-primary" href="%3$s" target="_blank">%4$s</a></p> </div>',
+		// translators: %s - theme name
+		sprintf( esc_html__( '%s is no longer maintained', 'amadeus' ), $name ),
+		// translators: %s - theme name
+		sprintf( __( 'We\'re saying goodbye to amadeus in favor of our more powerful Neve free WordPress theme. This means that there will not be any new features added although we will continue to update the theme for major security issues.', 'amadeus' ) ),
+		esc_url( admin_url( 'theme-install.php?theme=neve' ) ),
+		esc_html__( 'See Neve theme', 'amadeus' )
+	);
 
-    $style = '
+	$style = '
 				.nv-notice-wrapper p{
 					font-size: 14px;
 				}
@@ -600,16 +604,16 @@ function amadeus_retirement_notice() {
 				}
 			';
 
-    $message = sprintf(
-        $notice_template,
-        $notice_header,
-        $notice_picture,
-        $notice_left_side_content,
-        $notice_right_side_content,
-        $style
-    );// WPCS: XSS OK.
+	$message = sprintf(
+		$notice_template,
+		$notice_header,
+		$notice_picture,
+		$notice_left_side_content,
+		$notice_right_side_content,
+		$style
+	);// WPCS: XSS OK.
 
-    printf( '<div class="notice updated" style="position:relative; padding-right: 35px;">%1$s<p>%2$s</p></div>', $dismiss_button, $message );
+	printf( '<div class="notice updated" style="position:relative; padding-right: 35px;">%1$s<p>%2$s</p></div>', $dismiss_button, $message );
 }
 add_action( 'admin_notices', 'amadeus_retirement_notice' );
 
@@ -617,12 +621,12 @@ add_action( 'admin_notices', 'amadeus_retirement_notice' );
  * Update the amadeus_ignore_retirement_notice option to true, to dismiss the notice from the dashboard
  */
 function amadeus_nag_ignore_retirement() {
-    global $current_user;
-    $user_id = $current_user->ID;
-    /* If user clicks to ignore the notice, add that to their user meta */
-    if ( isset( $_GET['amadeus_nag_ignore_retirement'] ) && '0' == $_GET['amadeus_nag_ignore_retirement'] ) {
-        add_user_meta( $user_id, 'amadeus_ignore_retirement_notice', 'true', true );
-    }
+	global $current_user;
+	$user_id = $current_user->ID;
+	/* If user clicks to ignore the notice, add that to their user meta */
+	if ( isset( $_GET['amadeus_nag_ignore_retirement'] ) && '0' == $_GET['amadeus_nag_ignore_retirement'] ) {
+		add_user_meta( $user_id, 'amadeus_ignore_retirement_notice', 'true', true );
+	}
 }
 add_action( 'admin_init', 'amadeus_nag_ignore_retirement' );
 
