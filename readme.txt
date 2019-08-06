@@ -1,70 +1,87 @@
-I.Theme
-
-Amadeus, Copyright 2015 
-Amadeus is licensed under GNU General Public License V2 or later. You can find a copy of it in the license.txt file.
-
-II. Resources
-
-a) Framework
-a1) Underscores
-Resource URI: http://underscores.me/
-Copyright: Automattic, automattic.com
+=== Amadeus ===
+Contributors: themeisle
+Tags: custom-colors, custom-background, custom-menu, custom-header, featured-images, editor-style, sticky-post, theme-options, threaded-comments, translation-ready
+Requires at least: 4.0
+Tested up to: 4.9.8
+Stable tag: 2.1.4
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-a2) Bootstrap
-Resource URI: http://getbootstrap.com/
-Copyright: 2011-2014 Twitter, Inc
-License: MIT
-License URI: http://opensource.org/licenses/MIT
+Amadeus is a responsive blog theme that features a modern and clean design.
 
-b) FontAwesome
-Copyright: Dave Gandy
-Resource URI: http://fontawesome.io
-License: SIL Open Font License, Version 1.1
-License URI: https://scripts.sil.org/OFL?
+== Description ==
+Amadeus is a responsive blog theme that features a modern and clean design. Features include: a parallax header image, Metaslider integration, ability to use Google Fonts, social icons, full color control, custom widgets and much more.
 
-c) FitVids
-Copyright: Chris Coyier, Paravel
-Resource URI: http://fitvidsjs.com/
-License: WTFPL
-License URI: http://www.wtfpl.net/txt/copying/
+== Copyright ==
+Amadeus WordPress Theme, Copyright (C) 2016 ThemeIsle.com
+Amadeus is distributed under the terms of the GNU GPL
 
-d) html5shiv
-Copyright: Alexander Farkas, Jonathan Neal, Paul Irish
-Resource URI: https://code.google.com/p/html5shiv/
-License: MIT/GPLv2
-License URI: http://opensource.org/licenses/MIT
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+== Changelog ==
 
-e) Slicknav
-Copyright: Josh Cope
-Resource URI: https://github.com/ComputerWolf/SlickNav
-License: MIT
-License URI: http://opensource.org/licenses/MIT
+= 2.0.7 =
+* Updated grunt files
+* Compatibility with Orbit Fox plugin
 
-f) jQuery Parallax
-Copyright: Ian Lunn
-Resource URI: http://www.ianlunn.co.uk/plugins/jquery-parallax/
-License: MIT/GPL
-License URI: http://opensource.org/licenses/MIT
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+= 2.0.6 =
+* Fixed Grunt errors
+* Removed unused favicon control
 
-g) Screenshot
-The header image from the screenshot is also bundled and can be found in the images folder.
+= 2.0.5 =
+* Update tgm library
 
-Copyright: Unsplash
-Resource URI: http://pixabay.com/en/sparkler-holding-hands-firework-677774/
-License: CC0 1.0
-License URI: http://creativecommons.org/publicdomain/zero/1.0/deed.en
+= 2.0.4 =
+* Update Customize layout
 
-Copyright: jwhphotog
-Resource URI: http://pixabay.com/en/woman-portrait-face-model-canon-659354/
-License: CC0 1.0
-License URI: http://creativecommons.org/publicdomain/zero/1.0/deed.en
+= 2.0.3 =
+* Update fontawesome
 
-Copyright: Unsplash
-Resource URI: http://pixabay.com/en/surf-waves-shore-ocean-beach-sea-455761/
-License: CC0 1.0
-License URI: http://creativecommons.org/publicdomain/zero/1.0/deed.en
+= 2.0.2 =
+* Fix typo in page_fullwidth.php
 
+= 2.0.1 =
+* Added grunt and fixed all the generated errors
+* Recommend Nivo Slider Lite
+* Compatibility with Nivo Slider Lite plugin
+
+= 2.0.0 =
+* Update style.css
+
+= 1.2.0 =
+* Fixed issue with layout in Customize with WordPress 4.7
+
+= 1.13 =
+* Added upsell in customize
+* Fixed issues with custom logo support
+
+= 1.12 =
+* Fix issue with fields in Firefox
+
+= 1.11 =
+* Fix notice
+
+= 1.10 =
+* Fixed issue with fonts options in customize not visible in Firefox
+* Added support for custom logo
+* Fix typo
+
+== Resources ==
+
+* http://underscores.me/, Automattic, GPLv2
+
+* http://getbootstrap.com/, 2011-2014 Twitter, MIT
+
+* http://fontawesome.io, Dave Gandy, SIL Open Font License, Version 1.1
+
+* http://fitvidsjs.com/, Chris Coyier, Paravel, WTFPL
+
+* https://code.google.com/p/html5shiv/, Alexander Farkas, Jonathan Neal, Paul Irish, MIT/GPLv2
+
+* https://github.com/ComputerWolf/SlickNav, Josh Cope, MIT
+
+* http://www.ianlunn.co.uk/plugins/jquery-parallax/, Ian Lunn, MIT/GPL
+
+* http://pixabay.com/en/sparkler-holding-hands-firework-677774/, Unsplash, CC0 1.0
+
+* http://pixabay.com/en/woman-portrait-face-model-canon-659354/, jwhphotog, CC0 1.0
+
+* http://pixabay.com/en/surf-waves-shore-ocean-beach-sea-455761/, Unsplash, CC0 1.0
