@@ -30,6 +30,14 @@ before_install:
 - cd .. && chmod +x bin/load.sh
 - ". ./bin/load.sh"
 install:
+- echo $TRAVIS_PHP_VERSION
+- echo $DEPLOY_BUILD;
+- echo $MASTER_BRANCH
+- echo $TRAVIS_BRANCH
+- echo $UPSTREAM_REPO
+- echo $TRAVIS_REPO_SLUG
+- echo $TRAVIS_EVENT_TYPE
+- echo $TRAVIS_PULL_REQUEST
 - chmod +x bin/install-dependencies.sh
 - ". ./bin/install-dependencies.sh"
 script:
