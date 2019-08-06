@@ -1,4 +1,9 @@
 
+ ### v2.1.4 - 2019-08-06 
+ **Changes:** 
+ * Updates for Travis
+* Prepare for retirement notice
+ 
  ### v2.1.3 - 2018-11-27 
  **Changes:** 
   
