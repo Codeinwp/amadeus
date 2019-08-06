@@ -19,6 +19,8 @@
 
         <exclude name="WordPress.Files.FileName.InvalidClassFileName" />
         <exclude name="WordPress.Files.FileName.NotHyphenatedLowercase" />
+        <exclude name="WordPress.PHP.StrictComparisons.LooseComparison" />
+        
     </rule>
     <rule ref="WordPress-Docs">
 
