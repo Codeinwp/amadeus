@@ -17,6 +17,11 @@ Amadeus WordPress Theme, Copyright (C) 2016 ThemeIsle.com
 Amadeus is distributed under the terms of the GNU GPL
 
 == Changelog ==
+= 2.1.5 - 2020-07-09  = 
+
+* Remove SDK
+
+
 = 2.1.4 - 2019-08-06  = 
 
 * Updates for Travis
